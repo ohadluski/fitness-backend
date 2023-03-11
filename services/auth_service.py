@@ -31,7 +31,7 @@ class AuthService:
 
     def signup(self):
         """ Prompt user for signup information"""
-        username = input('Choose a username: ')
+        username = input('Choose a username:  ')
         password = input('Choose a password: ')
         first_name = input('Enter your first name: ')
         last_name = input('Enter your last name: ')
