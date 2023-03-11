@@ -7,8 +7,8 @@ def create_table():
     conn = sqlite3.connect("../users.db")
     cursor = conn.cursor()
 
-    sql = ('''
-        CREATE TABLE IF NOT EXISTS users_db (
+    sql = (F'''
+        CREATE TABLE IF NOT EXISTS {consts.TableNames.USERS} (
             username TEXT PRIMARY KEY,
             password TEXT,
             first_name TEXT,
@@ -37,7 +37,8 @@ class DbService:
         self.cursor.execute(query)
         self.conn.commit()
         return self.cursor.fetchall()
-#
+
+
 # def push_csv_data_to_sqlite(users_csv):
 #     with open(users_csv, 'r') as f:
 #         next(f) # Skip the header row.

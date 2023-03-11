@@ -16,8 +16,8 @@ def activity():
 
 class Goals:
 
-    def __init__(self, user_pick=None):
-        """ Asks users for their goals """
+    def __init__(self):
+        # Asks users for their goals
         print("Let's start with your goals!")
         print("Please select your goal from the list above (1-7)")
         goals = ["1. Lose Weight", "2. Maintain Weight", "3. Gain weight", "4. Gain Muscle", "5. Modify My Diet",
