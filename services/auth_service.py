@@ -4,6 +4,7 @@ from os import system
 import sqlite3
 import consts
 from services import db_service
+import objectives
 
 
 # Define a class authorizing the user to user the app
@@ -35,6 +36,12 @@ class AuthService:
     def signup(self):
         # Prompt user for signup information
         username = input('Choose a username: ')
+        username_query = f" SELECT * FROM {consts.TableNames.USERS} WHERE username = '{username}'"
+        user_check = self.db.execute(username_query)
+        if len(user_check) > 0:
+            print("User already exists. Choose another username")
+            self.signup()
+            return
         password = input('Choose a password: ')
         first_name = input('Enter your first name: ')
         last_name = input('Enter your last name: ')
@@ -50,12 +57,21 @@ class AuthService:
         # Adds user to the database
         query = f"INSERT INTO {consts.TableNames.USERS} values ('{username}', '{password}', '{first_name}', '{last_name}', '{email}', " \
                 f"'{gender}','{phone_number}', '{address}', {age}, {weight}, {height}, {calorie_count})"
-        try:
-            self.db.execute(query)
-            print("Signed Up Successfully!")
-        except sqlite3.IntegrityError:
-            print("User already exists. Try again.")
-            self.signup()
+
+        self.db.execute(query)
+
+        print("Signed Up Successfully!")
+
+        objectives.goals()
+        objectives.activity()
+
+
+
+
+
+
+
+
 
         # self.users[username] = {'username': username, 'password': password, 'first_name': first_name,
         #                         'last_name': last_name, 'email': email, 'gender': gender, 'phone_number': phone_number,

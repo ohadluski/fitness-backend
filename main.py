@@ -2,11 +2,8 @@ from services import auth_service
 from services import db_service
 import objectives
 
-
-# from goals import Goals
 db_serv = db_service.DbService()
 auth_serv = auth_service.AuthService(db_serv)
-
 
 # Prompt user to login or signup
 action = input('Welcome to the fitness app! Enter "1" to log in or "2" to sign up: ')
