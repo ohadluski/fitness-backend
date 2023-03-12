@@ -1,12 +1,12 @@
 # Import necessary modules
-import csv
+
 from os import system
 import sqlite3
 import consts
 from services import db_service
 
 
-# Define a class for the fitness app
+# Define a class authorizing the user to user the app
 class AuthService:
     def __init__(self, db: db_service.DbService):
         """ Load user data from CSV file"""
@@ -32,21 +32,19 @@ class AuthService:
 
         print("Login Successful!")
 
-
-
     def signup(self):
         # Prompt user for signup information
         username = input('Choose a username: ')
-        password = "1234" # input('Choose a password: ')
-        first_name = "ohad" #input('Enter your first name: ')
-        last_name = "luski" # input('Enter your last name: ')
-        email = "luskioh@gmail.com" #input('Enter your email address: ')
-        gender = "male" #input('Enter your gender: ')
-        phone_number = "123" # input('Enter your phone number: ')
-        address = "street" # input('Enter your address: ')
-        age = 29 # input('Enter your age: ')
-        weight = 80 #input('Enter your weight (in kg): ')
-        height = 180 # input('Enter your height (in cm): ')
+        password = input('Choose a password: ')
+        first_name = input('Enter your first name: ')
+        last_name = input('Enter your last name: ')
+        email = input('Enter your email address: ')
+        gender = input('Enter your gender: ')
+        phone_number = input('Enter your phone number: ')
+        address = input('Enter your address: ')
+        age = input('Enter your age: ')
+        weight = input('Enter your weight (in kg): ')
+        height = input('Enter your height (in cm): ')
         calorie_count = 0
 
         # Adds user to the database
@@ -58,12 +56,6 @@ class AuthService:
         except sqlite3.IntegrityError:
             print("User already exists. Try again.")
             self.signup()
-
-
-
-
-
-
 
         # self.users[username] = {'username': username, 'password': password, 'first_name': first_name,
         #                         'last_name': last_name, 'email': email, 'gender': gender, 'phone_number': phone_number,
