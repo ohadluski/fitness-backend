@@ -1,3 +1,5 @@
+all must be installed on system before running on local server
+
 flask
 Flask-SQLAlchemy
 flask-login
