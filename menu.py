@@ -1,6 +1,6 @@
 import random
 
-# Menu to be randomized and pulled for each user
+# Menu to be randomized and pulled for each user. 
 
 Breakfast = [
     {

@@ -7,3 +7,4 @@ class TableNames:
     SCHEDULE = "schedule_db"
     EXERCISES = "exercises_db"
     MENU = "menu_db"
+

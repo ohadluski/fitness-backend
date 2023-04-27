@@ -14,3 +14,6 @@ elif action == '2':
     auth_serv.signup()
 else:
     print('Invalid input. Please try again.')
+    print('Invalid input. Please try again.')
+
+
