@@ -5,7 +5,7 @@ def activity():
     # Asks users for their activity level
     print("Please check the list below and choose the option that best describes you:")
     levels = ["\n1. Not Very Active. Spend most of the day sitting (e.g. bank teller, desk job)",
-              "\n2. Lightly Active. Spend a good part of the day on your feet (e.g. teacher, salesperson)",
+              "\n2. 'Lightly Active', 'Spend a good part of the day on your feet (e.g. teacher, salesperson)"
               "\n3. Active. Spend a good part of the day doing some physical activity "
               "(e.g. food server, postal carrier)",
               "\n4. Very Active. Spend most of the day doing some physical activity "
@@ -28,7 +28,6 @@ def activity():
           f"You're one step closer to achieving your goals!")
     print(activity_pick)
     return activity_pick
-
 
 
 def goals():

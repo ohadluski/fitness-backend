@@ -10,7 +10,7 @@ import objectives
 # Define a class authorizing the user to user the app
 class AuthService:
     def __init__(self, db: db_service.DbService):
-        """ Load user data from CSV file"""
+        # Loads user data from db
         self.db = db
 
     def login(self):
@@ -23,7 +23,7 @@ class AuthService:
             if len(user_check) > 0:
                 password = input('Password: ')
                 password_query = f" SELECT * FROM {consts.TableNames.USERS} WHERE password = '{password}'"
-                pass_check = self.db.execute(password_query)
+                pass_check = (password_query)
                 if len(pass_check) == 0:
                     print("Wrong Password. Please try again")
                 else:
@@ -64,25 +64,3 @@ class AuthService:
 
         objectives.goals()
         objectives.activity()
-
-
-
-
-
-
-
-
-
-        # self.users[username] = {'username': username, 'password': password, 'first_name': first_name,
-        #                         'last_name': last_name, 'email': email, 'gender': gender, 'phone_number': phone_number,
-        #                         'address': address, 'age': age, 'weight': weight, 'height': height,
-        #                         'calorie_count': calorie_count}
-        # fieldnames = ['username', 'password', 'first_name', 'last_name', 'email', 'gender', 'phone_number', 'address',
-        #               'age', 'weight', 'height', 'calorie_count']
-        # with open('../users.csv', 'w', newline='') as f:
-        #     writer = csv.DictWriter(f, fieldnames=fieldnames)
-        #     writer.writeheader()
-        #     writer.writerows(self.users.values())
-        #
-        # system("clear")
-        # print('Signup successful! Please log in.')
