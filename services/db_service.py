@@ -37,3 +37,5 @@ class DbService:
         self.cursor.execute(query)
         self.conn.commit()
         return self.cursor.fetchall()
+
+#Ohad
