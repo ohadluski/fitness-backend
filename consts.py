@@ -8,3 +8,4 @@ class TableNames:
     EXERCISES = "exercises_db"
     MENU = "menu_db"
 
+#Kat
